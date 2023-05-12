@@ -104,11 +104,11 @@ class ParameterValueInput extends React.Component {
         mode={parameter.multiValuesOptions ? "multiple" : "default"}
         value={normalize(value)}
         onChange={this.onSelect}
-        options={enumOptionsArray.map((option) => {
+        options={enumOptionsArray.map(option => {
           let alias = option;
           const groups = this.state.reg.exec(option);
-          if ((groups !== null) && (groups[1] !== null)) alias = groups[1];
-          return ({ label: alias, value: option });
+          if (groups !== null && groups[1] !== null) alias = groups[1];
+          return { label: alias, value: option };
         })}
         showSearch
         showArrow
